@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>分页</title>
+    <style type="text/css">
+        a, span {
+            display: inline-block;
+            padding-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        // 分页
+        var myPaginate = {
+            perPage: 10,
+            pageNums: [],
+            pageCurrent: 1,
+            total: 0,
+            pageLast: 1,
+            pageStart: 1,
+            pageEnd: 1,
+            i: 0,
+            render: function(x, y, z) {
+                this.pageCurrent = parseInt(x);
+                this.total = parseInt(y);
+                this.perPage = z || 10;
+                this.pageLast = Math.ceil(this.total / this.perPage);
+
+                if (this.total === 0 || this.pageLast <= 1)
+                    return this.pageNums;
+                if (pageCurrent > 1) {
+                    this.pageNums.push({name: '«', num : 1});
+                    this.pageNums.push({name: '‹', num : this.pageCurrent - 1});
+                }
+
+                this.pageStart = this.pageCurrent - 3;
+                this.pageEnd = this.pageCurrent + 3;
+                this.pageEnd = this.pageStart < 1 ? this.pageEnd + 1 - this.pageStart : this.pageEnd;
+                this.pageStart = this.pageEnd > this.pageLast ? this.pageStart - this.pageEnd + this.pageLast : this.pageStart;
+                for (this.i = this.pageStart; this.i <= this.pageEnd; this.i++) {
+                    if (this.i >= 1 && this.i <= this.pageLast) {
+                        this.pageNums.push({name: this.i, num : this.i});
+                    }
+                }
+
+                if (this.pageCurrent < this.pageLast) {
+                    this.pageNums.push({name: '›', num : this.pageCurrent + 1});
+                    this.pageNums.push({name: '»', num : this.pageLast});
+                }
+                return this.pageNums;
+            }
+        };
+
+        var html = '';
+        var pageCurrent = location.href.indexOf('=') < 0 ? 1 : location.href.substr(location.href.indexOf('=') + 1);
+        var pages = myPaginate.render(pageCurrent, 10000);
+        for (var i = 0; i < pages.length; i++) {
+            if (pages[i].num == pageCurrent) {
+                html += '<span>' + pages[i].name + '</span>';
+            } else {
+                html += '<a href="?page=' + pages[i].num + '">' + pages[i].name + '</a>';
+            }
+        }
+        document.write(html);
+    </script>
+</body>
+</html>
