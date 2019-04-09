@@ -26,6 +26,7 @@
                 this.total = parseInt(y);
                 this.perPage = z || 10;
                 this.pageLast = Math.ceil(this.total / this.perPage);
+                this.pageNums = [];
 
                 if (this.total === 0 || this.pageLast <= 1)
                     return this.pageNums;
@@ -60,6 +61,16 @@
                 html += '<span>' + pages[i].name + '</span>';
             } else {
                 html += '<a href="?page=' + pages[i].num + '">' + pages[i].name + '</a>';
+            }
+        }
+
+        var pagesNew = myPaginate.render(pageCurrent, 100);
+		html += '<hr>';
+        for (var i = 0; i < pagesNew.length; i++) {
+            if (pagesNew[i].num == pageCurrent) {
+                html += '<span>' + pagesNew[i].name + '</span>';
+            } else {
+                html += '<a href="?page=' + pagesNew[i].num + '">' + pagesNew[i].name + '</a>';
             }
         }
         document.write(html);
