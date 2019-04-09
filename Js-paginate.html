@@ -29,7 +29,7 @@
 
                 if (this.total === 0 || this.pageLast <= 1)
                     return this.pageNums;
-                if (pageCurrent > 1) {
+                if (this.pageCurrent > 1) {
                     this.pageNums.push({name: '«', num : 1});
                     this.pageNums.push({name: '‹', num : this.pageCurrent - 1});
                 }
