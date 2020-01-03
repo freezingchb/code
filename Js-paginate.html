@@ -74,6 +74,39 @@
             }
         }
         document.write(html);
+		
+/**
+ * 简单的分页
+ *
+ * @param page 当前页
+ * @param total 数据总数
+ * @param pageSize 也大小
+ * @returns Array
+ */
+function simplePaginate(page, total, pageSize) {
+    pageSize = pageSize || 20;
+    var pages = [],
+        pageStart = page - 3,
+        pageEnd = page + 3,
+        pageLast = Math.ceil(parseInt(total) / pageSize); // 共几页
+
+    if (pageStart < 1) pageEnd += 1 - pageStart;
+    if (pageEnd > pageLast) pageStart -= pageEnd - pageLast;
+
+    var pagePrev = page - 1 < 1 ? 1 : page - 1;
+    pages.push({num: 1, text: '«'});
+    pages.push({num: pagePrev, text: '‹'});
+
+    for (var pageNum = pageStart; pageNum <= pageEnd; pageNum++) {
+        if (pageNum >= 1 && pageNum <= pageLast) pages.push({num: pageNum, text: pageNum});
+    }
+
+    var pageNext = page + 1 > pageLast ? pageLast : page + 1;
+    pages.push({num: pageNext, text: '›'});
+    pages.push({num: pageLast, text: '»'});
+
+    return pages;
+}
     </script>
 </body>
 </html>

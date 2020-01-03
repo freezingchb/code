@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>微信公众平台</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="http://www.meijiehezi.com/static/index/js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+<div id="main">
+    <div class="color-top"></div>
+    <header class="width960">
+        <a class="logo">
+            <img src="./logo.png" alt="">
+            <span>微信公众平台</span>
+        </a>
+        <div class="register-wrap">
+            <a href="" class="register">
+                <span>立即注册</span>
+            </a>
+            <div class="line">|</div>
+            <div class="language">
+                <span>简体中文</span>
+                <div class="language-switch grey-border">
+                    <p class="active" onclick="$(this).toggleClass('active')">简体中文</p>
+                    <p onclick="$(this).toggleClass('active')">English</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="width960">
+            <form action="">
+                <div class="login-wrap">
+                    <div>登录</div>
+                    <i class="user"></i>
+                    <input type="text" class="input grey-border" placeholder="邮箱/微信号/QQ号">
+                    <i class="lock"></i>
+                    <input type="password" class="input grey-border" placeholder="密码">
+                    <ul>
+                        <li class="remember" onclick="$(this).toggleClass('active')">
+                            <span>记住账号</span>
+                        </li>
+                        <li>
+                            <a href="">找回账号或密码</a>
+                        </li>
+                    </ul>
+                    <input type="button" class="btn login-btn" value="登录">
+                    <div class="login-code">
+                        <p class="login-code-img">
+                            <img src="https://res.wx.qq.com/mpres/htmledition/images/mp_qrcode49d02c.gif" alt="">
+                        </p>
+                        <p><span>扫描并关注</span></p>
+                        <p><span>微信公众平台</span></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="width960">
+        <ul class="notice grey-border">
+            <li>系统公告</li>
+            <li class="item new"><a href="">关于小程序恶意对抗平台规则的违规行为公告</a></li>
+            <li class="item new"><a href="">公众号文章内图片跳转的调整通知</a></li>
+            <li class="right"><a href="">查看更多</a></li>
+        </ul>
+        <section class="account">
+            <h2>账号分类</h2>
+            <div class="account-wrap">
+                <div class="account-item grey-border">
+                    <p><i class="account-img"></i></p>
+                    <p>服务号</p>
+                    <p>
+                        给企业和组织提供更强大的业务服务与用户管理能力，帮助企业快速实现全新的公众号服务平台。
+                    </p>
+                    <ul class="account-detail">
+                        <li><a href="" class="btn account-detail-btn">查看详情</a></li>
+                        <li class="account-detail-dec">
+                            <a>开发文档</a>
+                            <span class="account-detail-line">|</span>
+                            <a>运营规范</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="account-item grey-border">
+                    <p><i class="account-img"></i></p>
+                    <p>订阅号</p>
+                    <p>
+                        为媒体和个人提供一种新的信息传播方式，构建与读者之间更好的沟通与管理模式。
+                    </p>
+                    <ul class="account-detail">
+                        <li><a href="" class="btn account-detail-btn">查看详情</a></li>
+                        <li class="account-detail-dec">
+                            <a>开发文档</a>
+                            <span class="account-detail-line">|</span>
+                            <a>运营规范</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="account-item grey-border">
+                    <p><i class="account-img"></i></p>
+                    <p>小程序</p>
+                    <p>
+                        一种新的开放能力，可以在微信内被便捷地获取和传播，同时具有出色的使用体验。
+                    </p>
+                    <ul class="account-detail">
+                        <li><a href="" class="btn account-detail-btn">查看详情</a></li>
+                        <li class="account-detail-dec">
+                            <a>设计</a>
+                            <span class="account-detail-line">|</span>
+                            <a>运营</a>
+                            <span class="account-detail-line">|</span>
+                            <a>社区</a>
+                        </li>
+                        <li class="account-detail-dec">
+                            <a>小程序开发文档</a>
+                            <span class="account-detail-line">|</span>
+                            <a>小游戏开发文档</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="company-chat grey-border">
+                <li></li>
+                <li>
+                    <p class="chat-title">
+                        <span>企业微信</span>
+                        <span>原企业号</span>
+                    </p>
+                    <p class="chat-info">企业的专业办公管理工具。与微信一致的沟通体验，提供丰富免费的办公应用，并与微信消息、小程序、微信支付等互通，助力企业高效办公和管理。</p>
+                </li>
+            </ul>
+        </section>
+        <footer>
+            <div class="foot-link">
+                <a>关于腾讯</a>
+                <span>|</span>
+                <a>服务协议</a>
+                <span>|</span>
+                <a>运营中心</a>
+                <span>|</span>
+                <a>辟谣中心</a>
+                <span>|</span>
+                <a>腾讯客服</a>
+                <span>|</span>
+                <a>侵权投诉</a>
+            </div>
+            <div class="foot-copyright">
+                Copyright © 2012-2020 Tencent. All Rights Reserved.
+            </div>
+        </footer>
+    </div>
+</div>
+</body>
+</html>
